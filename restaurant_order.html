@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>餐廳線上下單</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/restaurant.css" type="text/css">
+	<link rel="stylesheet" href="css/swiper.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Rubik|Baumans|Nova+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+	
+<body>
+	<header>
+	  <h1><a href="index.html">＜ </a> UMPass校園通</h1>
+	</header>
+	<div id="content">
+		<ul v-if="currentPage == 'selectRestaurant'">
+			<h3 class="title">線上訂餐</h3>
+			<h2 class="title">選擇餐廳</h2>
+			<a class="restaurant-name" href="#" v-for='(ress, restaurant) in restaurants' :restaurant="restaurant" :restaurants="ress" @click="currentPage = 'selectFood'; passRestAction(restaurant);">{{restaurant}}</a>
+		</ul>
+		<ul v-if="currentPage == 'selectFood'">
+			<h3 class="title">{{selectedRestaurant}}</h3>
+			<h2 class="title">選擇餐飲</h2>
+			<restaurant v-if="selectedRestaurant == restaurant" v-for='(ress, restaurant) in restaurants' :restaurants='ress' v-on:nextNext="currentPage = 'pickTime'; selectedFoodPrice = food.price; this.data.selectedFood = food.name;">></restaurant>
+		</ul>
+		<section v-if="currentPage == 'pickTime'">
+			<h3 class="title">{{selectedRestaurant}} {{selectedFood}}</h3>
+			<h2 class="title">選擇</h2>
+		</section>
+	</div>
+	
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/swiper.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/restaurant_order.js"></script>
+</body>
+</html>

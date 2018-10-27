@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+	<link rel="stylesheet" href="css/swiper.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.0/css/weather-icons.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Dosis|Rubik|Baumans|Nova+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+	<header>
+	  <h1>UMPass校園通</h1>
+	</header>
+	
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<img class="swiper-slide" src="img/slider/1.jpg" alt="紅樹林餐廳海報">
+			<img class="swiper-slide" src="img/slider/2.jpg" alt="大平洋咖啡餐廳海報">
+			<img class="swiper-slide" src="img/slider/3.jpg" alt="富臨軒餐廳海報">
+		</div>
+		<div class="swiper-pagination"></div>
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+	
+	<div class="menu">
+		
+		<div class="menu-item order-food">
+			<a class="description" href="restaurant_order.html">線上訂餐</a>
+		</div>
+		
+		<div class="menu-item weather">
+			<div class="description">
+				<i id="weather-icon" class="wi wi-day-sunny"></i>
+				<span id="w-temp">N/A</span>
+				<span id="w-dscp">(description N/A)</span>
+			</div>
+         </div>
+		</div>
+	</div>
+	<div class="menu">
+	
+		<div class="menu-item gym">
+			<a class="description" href="#">體育館</a>
+		</div>
+	
+		<div class="menu-item"></div>
+	</div>
+	
+	
+	<script src="js/jquery-3.3.1.js"></script> 
+	<script src="js/swiper.js"></script> 
+	<script src="js/vue.js"></script> 
+	<script src="js/index.js"></script>
+</body>
+</html>
